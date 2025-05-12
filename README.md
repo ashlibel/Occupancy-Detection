@@ -9,9 +9,9 @@ This assignment attempts to build on the skills you learned in the previous assi
 
 ## Problem 1, 2, and 3
 
-You will complete these three coding challenges in the same notebook called homework3.ipynb. This notebook has a set of instructions for you to follow.
+You will complete these three coding challenges in the same notebook called `homework3.ipynb`. This notebook has a set of instructions for you to follow.
 
-* [ ] Complete the homework3.ipynb notebook
+* [ ] Complete the [homework3.ipynb](homework3.ipynb) notebook
 
 ## Turn in homework assignment
 
@@ -23,10 +23,9 @@ Now you need to commit and push your changes to your repository. You can do this
 
 ## Final notes
 
-Your first instinct should be to ask your peers for help using the Slack channel. No need to be shy! Let's keep Deniz's DMs free for important things like cat pictures and memes.
+Your first instinct should be to ask your peers for help using the Slack channel. No need to be shy! Let's keep Karson's DMs free for important things like cat pictures and memes.
 
-You are encouraged to reach out to your peers and the teaching team while working through this assignment. You can use the Slack channel to ask questions and discuss the homework. Thoroughly read through the assignment and attempt to complete it on your own before asking for help. When asking for help, be sure to include all relevant details and a screenshot of any error messages you are receiving (if applicable). 
+You are encouraged to reach out to your peers and the teaching team while working through this assignment. You can use the Slack channel to ask questions and discuss the homework. Thoroughly read through the assignment and attempt to complete it on your own before asking for help. When asking for help, be sure to include all relevant details and a screenshot of any error messages you are receiving (if applicable).
 
-## Answer key
-
-The answer key for this assignment will be posted after the due date for the assignment has passed.
+## REGARDING USE OF AI
+Please complete the assignments without the assistance of Copilot, ChatGPT, Claude, and the like. While these tools are very powerful for helping develop code when you understand and can evaluate the output, these assignments are at a very basic Python level and using chatbots or code assistants will prevent you from being able to check your code and reason about it deeply in the future, leaving you dependent on the chatbot. You are better off learning how to think logically and program based on that logic than relying on AI for this code school.

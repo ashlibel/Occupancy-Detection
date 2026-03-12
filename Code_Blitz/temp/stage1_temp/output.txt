@@ -1,0 +1,66 @@
+== Environment ==
+Python 3.12.7
+g++ (Homebrew GCC 15.2.0) 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+javac 17.0.8
+
+== Grading ==
+
+---- Problem: problem0 ----
+Using submission: solutions/problem0/sum.py
+
+Test: input1.txt
+PASS
+
+Test: input2.txt
+PASS
+
+Test: input3.txt
+PASS
+problem0 ~ Tests Passed 3 / 3 tests
+
+---- Problem: problem1 ----
+Using submission: solutions/problem1/solution.py
+
+Test: input1.txt
+PASS
+
+Test: input2.txt
+PASS
+
+Test: input3.txt
+PASS
+problem1 ~ Tests Passed 3 / 3 tests
+
+---- Problem: problem2 ----
+Using submission: solutions/problem2/solution.py
+
+Test: input1.txt
+PASS
+
+Test: input2.txt
+PASS
+
+Test: input3.txt
+PASS
+problem2 ~ Tests Passed 3 / 3 tests
+
+---- Problem: problem3 ----
+Using submission: solutions/problem3/solution.py
+
+Test: input1.txt
+PASS
+
+Test: input2.txt
+PASS
+
+Test: input3.txt
+PASS
+problem3 ~ Tests Passed 3 / 3 tests
+
+== Summary ==
+Passed 12 / 12 tests
+OVERALL: PASS

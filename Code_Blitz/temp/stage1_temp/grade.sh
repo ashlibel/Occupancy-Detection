@@ -92,6 +92,8 @@ echo ""
 echo "== Summary =="
 echo "Passed $passed / $total tests"
 
+echo "$passed $total" > output1.txt
+
 if [[ $fail -ne 0 ]]; then
   echo "OVERALL: FAIL"
   exit 1

@@ -1,16 +1,43 @@
-# React + Vite
+# Prerequisites
+1. Homebrew
+- Check if installed: `brew --version`
+- Update if needed: `brew update`
+- Install: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+2. Node.js
+- Check if installed: `node -v`
+- Update if needed: `brew upgrade node`
+- Install: `brew install node`
+3. Git
+- Check if installed: `git --version`
+- Update if needed: `brew upgrade git`
+- Install: `brew install git`
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# First Time Setup
+1. Clone repo: `git clone https://github.com/ashlibel/Occupancy-Detection.git`
+2. Go into project directory: `cd Occupancy-Detection`
 
-Currently, two official plugins are available:
+# Running Frontend Locally
+1. Go into project directory: `cd Occupancy-Detection`
+2. Change to the frontend branch: `git checkout frontend`
+3. Go into app directory: `cd room-occupancy-app` 
+4. `npm install` (only needed first time, or when dependencies change)
+5. Start the local frontend: `npm run dev`
+6. Open 'http://localhost:5173' in browser
+7. Stop server: `Ctrl + c`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Publishing An Update to GitHub Pages
+1. Stage, commit, and push to GitHub (see git workflow below)
+2. Make sure you're in correct directory: `cd room-occupancy-app`
+3. Deploy to GitHub Pages: `npm run deploy`
+4. Wait a minute or two, then check the live site to confirm changes
 
-## React Compiler
+# Git Workflow for Frontend
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Get Up To Date
+1. Make sure you're in the frontend branch: `git checkout frontend`
+2. Pull the latest changes from GitHub: `git pull` 
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## After Making Changes
+1. Stage: `git add .` OR `git add <file-name>`
+2. Commit: `git commit -m "description of what you changed"`
+3. Push to GitHub: `git push`

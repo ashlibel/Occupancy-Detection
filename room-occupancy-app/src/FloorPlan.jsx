@@ -1,8 +1,18 @@
-import floorplanUrl from './assets/floorplan.png'; // Import the 4th floor love library floor plan image
+// Import the 4th floor love library floor plan image
+import floorplanUrl from './assets/floorplan.png'; 
 
-import { ROOMS } from './rooms'; // Import the info/dimensions for each study room
+// Import the info/dimensions for each study room
+import { ROOMS } from './rooms'; 
 
-export default function FloorPlan() {
+// Styling for the occupancy status of the rooms
+export const STATUS_STYLES = {
+    available: {fill: '#15803d', stroke: '#14532d', label: 'Available'},
+    occupied: {fill: '#b91c1c', stroke: '#7f1d1d', label: 'Occupied'},
+    stale: {fill: '#f59e0b', stroke: '#b45309', label: 'Out of date'},
+    checking: {fill: '#64748b', stroke: '#334155', label: 'Checking...'},
+};
+
+export default function FloorPlan({roomData}) {
     return (
         // Create the floor plan using SVG
         <svg
@@ -19,9 +29,13 @@ export default function FloorPlan() {
             />
 
             {/* Draw an outline around each study room */}
-            {ROOMS.map((room) => (
-                <g key={room.id}>
-                    <title>{`Room ${room.label}`}</title>
+            {ROOMS.map((room) => {
+                const status = roomData[room.id]?.status ?? 'checking';
+                const style = STATUS_STYLES[status];
+
+                return(
+                    <g key={room.id}>
+                    <title>{`Room ${room.label}: ${style.label}`}</title>
                     {/* Create the room outline */}
                     <rect
                         x={room.x}
@@ -29,12 +43,13 @@ export default function FloorPlan() {
                         width={room.width}
                         height={room.height}
                         rx="2"
-                        fill="none"
-                        stroke="#0f172a"
-                        strokeWidth="2"
+                        fill={style.fill}
+                        stroke={style.stroke}
+                        strokeWidth="1.5"
                     />
                 </g>
-            ))}
+                );
+            })}
         </svg>
     );
 }

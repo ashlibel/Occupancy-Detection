@@ -1,6 +1,15 @@
 import FloorPlan from './FloorPlan'; // Import the FloorPlan component
+import { useState } from 'react';
 
 export default function App() {
+
+  // TEMPORARY: Hardcoded values just to test the occupancy status colors
+  const [roomData] = useState({
+    '418': { status: 'occupied' },
+    '420': { status: 'available' },
+    '422': { status: 'stale' },
+  });
+
   return (
     // Main page container
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -22,7 +31,7 @@ export default function App() {
       <main className="mx-auto max-w-6xl px-6 py-6">
         <section className="rounded-lg border border-slate-200 bg-white p-4">
           {/* Display the floor plan */}
-          <FloorPlan />
+          <FloorPlan roomData={roomData}/>
         </section>
       </main>
     </div>

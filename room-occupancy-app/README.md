@@ -29,7 +29,7 @@
 1. Stage, commit, and push to GitHub (see git workflow below)
 2. Make sure you're in correct directory: `cd room-occupancy-app`
 3. Deploy to GitHub Pages: `npm run deploy`
-4. Wait a minute or two, then check the live site to confirm changes
+4. Wait a minute or two, then check `https://ashlibel.github.io/Occupancy-Detection/`
 
 # Git Workflow for Frontend
 

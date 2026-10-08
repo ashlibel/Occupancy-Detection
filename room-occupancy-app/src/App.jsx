@@ -11,27 +11,38 @@ export default function App() {
   });
 
   return (
-    // Main page container
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-5">
-          {/* Page title */}
-          <h1 className="text-2xl font-semibold tracking-tight">
-            SDSU Love Library, 4th floor
-          </h1>
+        <div className="flex items-center justify-between gap-4 px-6 py-5">
+          <div>
+            {/* Page title */}
+            <h1 className="text-2xl font-semibold tracking-tight">
+              SDSU Love Library, 4th floor
+            </h1>
 
-          {/* Page description */}
-          <p className="mt-1 text-slate-600">
-            Study Room Occupancy Status
-          </p>
+            {/* Page description */}
+            <p className="mt-1 text-slate-600">Study Room Occupancy Status</p>
+          </div>
+
+          {/* The Refresh status button and "Last checked" text will go here */}
+          <div />
         </div>
       </header>
 
-      {/* Main page content */}
-      <main className="mx-auto max-w-6xl px-6 py-6">
+      <main className="grid gap-6 px-5 py-6 lg:grid-cols-[320px_1fr]">
+        {/* Left column: legend and room list */}
+        <aside className="flex flex-col gap-6">
+          <div className="rounded-lg border border-slate-200 bg-white p-4">
+            Status Legend
+          </div>
+          <div className="rounded-lg border border-slate-200 bg-white p-4">
+            Study Rooms list
+          </div>
+        </aside>
+
+        {/* Right column: floor plan */}
         <section className="rounded-lg border border-slate-200 bg-white p-4">
-          {/* Display the floor plan */}
-          <FloorPlan roomData={roomData}/>
+          <FloorPlan roomData={roomData} />
         </section>
       </main>
     </div>

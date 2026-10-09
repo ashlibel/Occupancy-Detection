@@ -6,11 +6,11 @@ import { ROOMS } from './rooms';
 
 // Styling for the occupancy status of the rooms
 export const STATUS_STYLES = {
-    available: {fill: '#15803d', stroke: '#14532d', label: 'Available'},
-    occupied: {fill: '#b91c1c', stroke: '#7f1d1d', label: 'Occupied'},
-    stale: {fill: '#f59e0b', stroke: '#b45309', label: 'Out of date'},
-    checking: {fill: '#64748b', stroke: '#334155', label: 'Checking...'},
-};
+    available: { fill: '#15803d', stroke: '#14532d', text: '#ffffff', label: 'Available', description: 'Room is open' },
+    occupied: { fill: '#b91c1c', stroke: '#7f1d1d', text: '#ffffff', label: 'Occupied', description: 'Room is in use' },
+    stale: { fill: '#f59e0b', stroke: '#b45309', text: '#1c1917', label: 'Stale', description: 'Status may be outdated' },
+    checking: { fill: '#64748b', stroke: '#334155', text: '#ffffff', label: 'Checking...', description: 'Waiting for data' },
+  };
 
 export default function FloorPlan({roomData}) {
     return (

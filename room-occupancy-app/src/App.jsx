@@ -1,5 +1,6 @@
 import FloorPlan from './FloorPlan'; // Import the FloorPlan component
 import { useState } from 'react';
+import StatusLegend from './StatusLegend';
 
 export default function App() {
 
@@ -32,9 +33,7 @@ export default function App() {
       <main className="grid gap-6 px-5 py-6 lg:grid-cols-[320px_1fr]">
         {/* Left column: legend and room list */}
         <aside className="flex flex-col gap-6">
-          <div className="rounded-lg border border-slate-200 bg-white p-4">
-            Status Legend
-          </div>
+            <StatusLegend />
           <div className="rounded-lg border border-slate-200 bg-white p-4">
             Study Rooms list
           </div>

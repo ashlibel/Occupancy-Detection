@@ -1,14 +1,15 @@
 import FloorPlan from './FloorPlan'; // Import the FloorPlan component
 import { useState } from 'react';
 import StatusLegend from './StatusLegend';
+import StudyRoomList from './StudyRoomList';
 
 export default function App() {
 
-  // TEMPORARY: Hardcoded values just to test the occupancy status colors
+  // TEMPORARY: hardcoded values just to test. This gets replaced by real data later.
   const [roomData] = useState({
-    '418': { status: 'occupied' },
-    '420': { status: 'available' },
-    '422': { status: 'stale' },
+    '418': { status: 'occupied', lastUpdated: new Date(Date.now() - 2 * 60 * 1000) },
+    '420': { status: 'available', lastUpdated: new Date(Date.now() - 1 * 60 * 1000) },
+    '422': { status: 'stale', lastUpdated: new Date(Date.now() - 25 * 60 * 1000) },
   });
 
   return (
@@ -34,9 +35,7 @@ export default function App() {
         {/* Left column: legend and room list */}
         <aside className="flex flex-col gap-4">
             <StatusLegend />
-          <div className="rounded-lg border border-slate-200 bg-white p-4">
-            Study Rooms list
-          </div>
+            <StudyRoomList roomData={roomData} />
         </aside>
 
         {/* Right column: floor plan */}

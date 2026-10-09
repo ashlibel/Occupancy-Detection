@@ -14,7 +14,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <header className="border-b border-slate-200 bg-white">
-        <div className="flex items-center justify-between gap-4 px-6 py-5">
+        <div className="flex items-center justify-between gap-4 px-6 py-3">
           <div>
             {/* Page title */}
             <h1 className="text-2xl font-semibold tracking-tight">
@@ -30,9 +30,9 @@ export default function App() {
         </div>
       </header>
 
-      <main className="grid gap-6 px-5 py-6 lg:grid-cols-[320px_1fr]">
+      <main className="grid gap-6 px-5 py-3 lg:grid-cols-[320px_1fr]">
         {/* Left column: legend and room list */}
-        <aside className="flex flex-col gap-6">
+        <aside className="flex flex-col gap-4">
             <StatusLegend />
           <div className="rounded-lg border border-slate-200 bg-white p-4">
             Study Rooms list

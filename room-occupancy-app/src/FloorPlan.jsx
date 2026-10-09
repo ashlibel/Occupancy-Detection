@@ -19,7 +19,7 @@ export default function FloorPlan({roomData}) {
             viewBox="0 0 740 550"
             role="img"
             aria-label="Floor plan of Love Library, 4th floor"
-            className="mx-auto h-auto max-h-[calc(100vh-12rem)] w-full"
+            className="mx-auto h-auto max-h-[calc(100vh-9rem)] w-full"
         >
             {/* Display the floor plan image */}
             <image

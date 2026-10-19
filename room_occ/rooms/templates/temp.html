@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Room Occupancy</h1>
+<p>Django managed database for room occupancy iot project. :D</p>
+
+<h1>Database</h1>
+  
+<ul>
+  {% for x in CurrentStatus %}
+    <li>{{ x.room_id }} {{ x.sensor_id }} {{ x.occupied }} {{ x.time }}</li>
+  {% endfor %}
+</ul>
+
+</body>
+</html>

@@ -2,19 +2,18 @@ import FloorPlan from './FloorPlan'; // Import the FloorPlan component
 import { useState } from 'react';
 import StatusLegend from './StatusLegend';
 import StudyRoomList from './StudyRoomList';
+import { fetchRoomData } from './api';
+import { ROOMS } from './rooms';
 
 export default function App() {
 
-  // TEMPORARY: hardcoded values just to test. This gets replaced by real data later.
-  const [roomData] = useState({
-    '418': { status: 'occupied', lastUpdated: new Date(Date.now() - 2 * 60 * 1000) },
-    '420': { status: 'available', lastUpdated: new Date(Date.now() - 1 * 60 * 1000) },
-    '422': { status: 'stale', lastUpdated: new Date(Date.now() - 25 * 60 * 1000) },
-  });
+  // Room data from the backend. Starts empty, so rooms show "Checking..." until the first refresh.
+  const [roomData, setRoomData] = useState({});
 
-  // Placeholder: this will fetch fresh room data from the backend later
-  function handleRefresh() {
-    console.log('Refresh clicked');
+  // TEMPORARY: logs the backend data to the console to test api.js
+  async function handleRefresh() {
+    const data = await fetchRoomData(ROOMS.map((room) => room.id));
+    setRoomData(data);
   }
 
   return (

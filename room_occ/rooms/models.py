@@ -4,4 +4,5 @@ class CurrentStatus(models.Model):
     room_id = models.IntegerField()
     sensor_id = models.IntegerField()
     occupied = models.BooleanField()
-    time = models.IntegerField()
+    time = models.DateTimeField(auto_now=True)
+    

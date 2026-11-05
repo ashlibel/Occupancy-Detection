@@ -2,13 +2,28 @@
 
 *** note: time variable data type will be changed to datetime, but currently it is type int
 
-1) clone git repo
-2) install django, djangorestframework, and sqlite through conda-forge channel
-3) activate server with "python manage.py runserver"
-4) install to send http requests "pip install httpie"
-5) send requests using format below
+## Initial Setup
+1) Clone repo: `git clone <repo-url>`
+2) Go into project directory: `cd Occupancy-Detection`
+3) Go to backend branch: `git checkout backend`
+4) Go to main folder: `cd room_occ`
+5) Make virtual environment: `python3 -m venv venv`
+6) Activate venv: `source venv/bin/activate`
+7) Install dependencies: `pip install -r requirements.txt`
+8) `python manage.py migrate`
+9) Run server: `python manage.py runserver 0.0.0.0:8000`
 
+## Basic workflow
+1) Go to project directory: `cd Occupancy-Detection`
+2) Go to backend branch: `git checkout backend`
+3) Get latest version: `git pull`
+4) Go to main folder: `cd room_occ`
+5) Activate venv: `source venv/bin/activate`
+6) Install any new dependencies if needed: `pip install -r requirements.txt`
+7) If needed: `python manage.py migrate`
+8) Run server: `python manage.py runserver 0.0.0.0:8000`
 
+## Request Formats
 **GET request**
 retrieve all room data or specific room data
 

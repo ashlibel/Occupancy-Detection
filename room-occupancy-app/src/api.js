@@ -24,7 +24,7 @@ function parseTime(value) {
 function normalizeRoom(row) {
   const lastUpdated = parseTime(row.time);
   const isOld =
-    lastUpdated !== null &&
+    lastUpdated === null ||
     Date.now() - lastUpdated.getTime() > STALE_AFTER_MINUTES * 60 * 1000;
 
   let status;

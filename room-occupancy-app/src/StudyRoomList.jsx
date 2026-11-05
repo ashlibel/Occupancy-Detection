@@ -2,7 +2,7 @@ import { ROOMS } from './rooms';
 import { STATUS_STYLES } from './FloorPlan';
 import { formatLastUpdated } from './formatTime';
 
-export default function StudyRoomList({ roomData }) {
+export default function StudyRoomList({ roomData, onHoverRoom }) {
   return (
     <div className="rounded-lg border border-slate-200 bg-white p-4">
       <h2 className="text-lg font-semibold">Study Rooms</h2>
@@ -16,7 +16,9 @@ export default function StudyRoomList({ roomData }) {
           return (
             <li
               key={room.id}
-              className="flex items-center gap-3 rounded-md border border-slate-200 px-3 py-2"
+              onMouseEnter={() => onHoverRoom(room.id)}
+              onMouseLeave={() => onHoverRoom(null)}
+              className="flex items-center gap-3 rounded-md border border-slate-200 px-3 py-2 hover:bg-slate-50 cursor-pointer"
             >
               {/* Colored dot that matches the room color on the map */}
               <span

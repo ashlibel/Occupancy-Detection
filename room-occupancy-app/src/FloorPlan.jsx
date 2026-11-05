@@ -12,7 +12,7 @@ export const STATUS_STYLES = {
     checking: { fill: '#64748b', stroke: '#334155', text: '#ffffff', label: 'Checking...', description: 'Waiting for data' },
   };
 
-export default function FloorPlan({roomData}) {
+export default function FloorPlan({roomData, highlightedId}) {
     return (
         // Create the floor plan using SVG
         <svg
@@ -48,6 +48,22 @@ export default function FloorPlan({roomData}) {
                         stroke={style.stroke}
                         strokeWidth="1.5"
                     />
+                    {/* Highlight ring, shown while this room is hovered in the list */}
+                    {room.id === highlightedId && (
+                        <rect
+                            x={room.x - 2}
+                            y={room.y - 2}
+                            width={room.width + 4}
+                            height={room.height + 4}
+                            rx="3"
+                            fill="#ffffff"
+                            fillOpacity="0.45"
+                            stroke="#1d4ed8"
+                            strokeWidth="4"
+                            className="animate-pulse"
+                            pointerEvents="none"
+                        />
+                    )}
                 </g>
                 );
             })}

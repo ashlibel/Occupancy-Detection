@@ -10,6 +10,9 @@ export default function App() {
   // Room data from the backend. Starts empty, so rooms show "Checking..." until the first refresh.
   const [roomData, setRoomData] = useState({});
 
+  // Which room is highlighted on the map (the list row the mouse is currently over).
+  const [highlightedId, setHighlightedId] = useState(null);
+
   // TEMPORARY: logs the backend data to the console to test api.js
   async function handleRefresh() {
     const data = await fetchRoomData(ROOMS.map((room) => room.id));
@@ -33,7 +36,7 @@ export default function App() {
           <button
             type="button"
             onClick={handleRefresh}
-            className="flex shrink-0 items-center gap-2 rounded-lg bg-red-700 px-5 py-3 font-medium text-white hover:bg-red-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
+            className="flex shrink-0 items-center gap-2 rounded-lg bg-red-700 px-5 py-3 font-medium text-white hover:bg-red-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700 cursor-pointer"
           >
             {/* Refresh icon */}
             <svg
@@ -57,12 +60,12 @@ export default function App() {
         {/* Left column: legend and room list */}
         <aside className="flex flex-col gap-4">
             <StatusLegend />
-            <StudyRoomList roomData={roomData} />
+            <StudyRoomList roomData={roomData} onHoverRoom={setHighlightedId} />
         </aside>
 
         {/* Right column: floor plan */}
         <section className="rounded-lg border border-slate-200 bg-white p-4">
-          <FloorPlan roomData={roomData} />
+          <FloorPlan roomData={roomData} highlightedId={highlightedId} />
         </section>
       </main>
     </div>

@@ -6,7 +6,7 @@
 #include "secrets.h"
 
 // match the number to the number of tape on the device
-const int ROOM_ID   = 2;
+const int ROOM_ID   = 420;
 const int SENSOR_ID = 2;
 
 //Timing (testing values; for real rooms use VACANT 120000 and HEARTBEAT 30000) ----
@@ -45,7 +45,7 @@ void connectWiFi() {
     Serial.print("\nConnected. ESP32 IP: ");
     Serial.println(WiFi.localIP());
   } else {
-    Serial.println("\nWi-Fi failed (is it a 2.4 GHz network? name/password right?). Will retry.");
+    Serial.printf("\nWi-Fi failed (status %d). Will retry.\n", WiFi.status());
   }
 }
 
@@ -84,6 +84,18 @@ bool sendStatus() {
   return (code == 200 || code == 201);
 }
 
+// Lists every 2.4 GHz network the board can see. 
+void scanNetworks() {
+  WiFi.mode(WIFI_STA);
+  WiFi.disconnect();
+  delay(100);
+  int n = WiFi.scanNetworks();
+  Serial.printf("Found %d networks:\n", n);
+  for (int i = 0; i < n; i++) {
+    Serial.printf("  [%s]  signal %d dBm  channel %d\n", WiFi.SSID(i).c_str(), WiFi.RSSI(i), WiFi.channel(i));
+  }
+}
+
 void setup() {
   Serial.begin(115200);
   delay(500);
@@ -95,7 +107,7 @@ void setup() {
   } else {
     Serial.println("LD2410 not found - check wiring (VCC on VIN/5V, TX/RX crossed).");
   }
-
+  scanNetworks();
   connectWiFi();
 }
 

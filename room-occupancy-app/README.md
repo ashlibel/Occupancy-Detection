@@ -18,8 +18,6 @@
 3. Go to frontend branch: `git checkout frontend`
 4. Go into app: `cd room-occupancy-app`
 5. Install dependencies: `npm install`
-6. Create .env.local file: `echo "VITE_API_URL=http://127.0.0.1:8000" > .env.local`
-    - Console will show 'VITE_API_URL is not set' if not created
 
 # Running Frontend Locally
 1. Go into project directory: `cd Occupancy-Detection`

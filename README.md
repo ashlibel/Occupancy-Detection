@@ -26,6 +26,19 @@ OCCUPANCY NODE (ESP32 + LD2410 mmWave sensor)
       - Use 1, 2 or 3 - a different number for each board. You can check how many pieces of washing tape is on the wires.
    - Note: We should set SENSOR_ID 1 to ROOM_ID 418, SENSOR_ID 2 to ROOM_ID 420, and SENSOR_ID 3 to ROOM_ID 422
 
+## Connecting to school WiFi via windows laptop
+1. Right click start menu
+2. Go to device manager
+3. Go to network adapters --> Right click Intel(R) Wi-Fi --> properties
+4. Go to advanced tab --> preferred band --> set value to 2.4GHz & save
+5. Go to settings --> open network & internet --> mobile hotspot
+6. Edit properties --> Set band to 2.4GHz
+7. Turn on mobile hotspot
+8. Open terminal & run `ipconfig`
+9. Look for Wireless LAN adapter Local Area Connection* 10 --> find IPv4 address
+10. Plug esp32 into laptop
+11. Open arduino IDE & put wifi info into secrets.h --> upload to esp32
+
 
 ## UPLOADING - CHECK THE BOARD AND PORT
 
@@ -111,4 +124,3 @@ Room always says occupied (seen=1)
 
 How a room becomes vacant
 - After VACANT_TIMEOUT_MS (10000 = 10 s for testing; use 120000 for real rooms) with nothing detected, the room is marked vacant.
-

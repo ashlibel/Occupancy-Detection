@@ -1,4 +1,15 @@
-django
-djangorestframework
-django-cors-headers
-httpie
+asgiref @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_asgiref_1788014230/work
+click @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_click_h5ded981_1794046236/work
+dj-database-url @ file:///home/conda/feedstock_root/build_artifacts/dj-database-url_1692119547398/work
+Django @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_django_hc364b38_1793738974/work
+djangorestframework @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_djangorestframework_1791375963/work
+gunicorn @ file:///Users/runner/miniforge3/conda-bld/gunicorn_1788522837499/work
+h11 @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_h11_1767729720/work
+packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1785888127/work
+psycopg2 @ file:///Users/runner/miniforge3/conda-bld/psycopg2-split_1788553361211/work
+psycopg2-binary @ file:///home/conda/feedstock_root/build_artifacts/psycopg2-split_1787646192563/work/psycopg2-binary
+setuptools==84.2.1
+sqlparse @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_sqlparse_1786961786/work
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_typing_extensions_1783002732/work
+uvicorn @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_uvicorn_1790356091/work
+whitenoise @ file:///home/conda/feedstock_root/build_artifacts/whitenoise_1772155800746/work

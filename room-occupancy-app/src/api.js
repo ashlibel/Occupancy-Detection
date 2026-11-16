@@ -1,4 +1,4 @@
-const API_URL = 'http://127.0.0.1:8000';
+const API_URL = 'https://occ-mwqd.onrender.com';
 
 // A reading older than this is treated as stale (the sensor may have stopped reporting).
 const STALE_AFTER_MINUTES = 5;

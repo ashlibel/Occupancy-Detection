@@ -14,17 +14,17 @@ OCCUPANCY NODE (ESP32 + LD2410 mmWave sensor)
 2. Fill in secrets.h (on your own computer only)
    - WIFI_SSID      your Wi-Fi name, spelled EXACTLY (capitals, spaces, apostrophes)
    - WIFI_PASSWORD  your Wi-Fi password
-   - SERVER_IP      the IP of the computer running the backend
+   - SERVER_IP      the IP of the computer running the backend (if running backend locally)
       - (Mac: run  ipconfig getifaddr en0  in a terminal)
    - The Wi-Fi must be 2.4 GHz (the ESP32 does not support 5 GHz).
      - iPhone hotspot: turn on "Maximize Compatibility" and keep the hotspot screen open while the ESP32 connects.
    - The ESP32 and the backend computer must be on the SAME network.
 
 3. Set the room numbers in occupancy_node.ino (top of the file)
-   - const int ROOM_ID = 418;
+   - const int ROOM_ID = 422;
    - const int SENSOR_ID = 1;
       - Use 1, 2 or 3 - a different number for each board. You can check how many pieces of washing tape is on the wires.
-   - Note: We should set SENSOR_ID 1 to ROOM_ID 418, SENSOR_ID 2 to ROOM_ID 420, and SENSOR_ID 3 to ROOM_ID 422
+   - Note: SENSOR_ID =1: ROOM_ID 422, SENSOR_ID = 2: ROOM_ID 420, SENSOR_ID = 3: ROOM_ID 418
 
 ## Connecting to school WiFi via windows laptop
 1. Right click start menu

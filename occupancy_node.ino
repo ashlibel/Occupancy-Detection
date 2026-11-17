@@ -1,12 +1,14 @@
-
-
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <ld2410.h>
 #include "secrets.h"
+#include "WiFiClientSecure.h"
 
 // match the number to the number of tape on the device
-const int ROOM_ID   = 420;
+// SENSOR_ID = 1: ROOM_ID = 422
+// SENSOR_ID = 2: ROOM_ID = 420
+// SENSOR_ID = 3: ROOM_ID = 418
+const int ROOM_ID   = 420; 
 const int SENSOR_ID = 2;
 
 //Timing (testing values; for real rooms use VACANT 120000 and HEARTBEAT 30000) ----
@@ -15,7 +17,7 @@ const unsigned long HEARTBEAT_MS      = 10000;  // re-send current status at lea
 const unsigned long RETRY_MS          = 5000;   // wait before retrying a failed send
 const unsigned long WIFI_TIMEOUT_MS   = 20000;  // give up on one Wi-Fi attempt after this
 const unsigned long WIFI_RETRY_MS     = 10000;  // wait between Wi-Fi attempts
-const uint16_t      HTTP_TIMEOUT_MS   = 5000;
+const uint16_t      HTTP_TIMEOUT_MS   = 20000;
 
 ld2410 radar;
 HardwareSerial RadarSerial(2);
@@ -51,9 +53,11 @@ void connectWiFi() {
 
 // Returns the HTTP status code, or a negative number if the connection failed.
 int sendRequest(const char* method, const String& url, const String& body) {
-  WiFiClient client;
+  WiFiClientSecure client;
+  client.setInsecure();
   HTTPClient http;
   http.setTimeout(HTTP_TIMEOUT_MS);
+  http.setConnectTimeout(HTTP_TIMEOUT_MS);
   http.begin(client, url);
   http.addHeader("Content-Type", "application/json");
   int code = (strcmp(method, "PUT") == 0) ? http.PUT(body) : http.POST(body);
@@ -69,7 +73,7 @@ int sendRequest(const char* method, const String& url, const String& body) {
 bool sendStatus() {
   if (WiFi.status() != WL_CONNECTED) return false;
 
-  String base = String("http://") + SERVER_IP + ":" + SERVER_PORT + "/rooms/";
+  String base = String("https://") + SERVER_HOST + "/rooms/";
   String body = String("{\"room_id\":") + ROOM_ID +
                 ",\"sensor_id\":" + SENSOR_ID +
                 ",\"occupied\":" + (occupied ? "true" : "false") + "}";
